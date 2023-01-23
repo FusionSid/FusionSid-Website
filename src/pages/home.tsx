@@ -4,8 +4,8 @@ export default function Home() {
   return (
     <>
       <Navbar navlinks={NavbarLinks} />
-      {/* <Hero />
-      <Footer /> */}
+      <Hero />
+      <Footer />
     </>
   );
 }

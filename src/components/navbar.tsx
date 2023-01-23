@@ -20,7 +20,7 @@ export default function Navbar(props: NavbarProps) {
         );
     }, []);
     console.log(showMobileNav)
-    const linkCodeStyle = "inline-block pr-1 md:text-[1rem] lg:text-[1.25rem] " + styles.homeTextCode
+    const linkCodeStyle = "inline-block pr-3 md:text-[1rem] lg:text-[1.25rem] " + styles.homeTextCode
     const linkCodeStyle2 = "inline-block pr-3 py-3 text-[1.5rem] " + styles.homeTextCode
 
     return (

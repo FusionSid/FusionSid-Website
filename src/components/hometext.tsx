@@ -4,7 +4,8 @@ function CodeText(props: any) {
 
 export default function HomeText() {
     return (
-        <>
+        <div className="overflow-x-hidden">
+            <h1 className="h-[10vh]"></h1>
             <CodeText text="void sayHello() {" />
             <div className="leading-[6rem]">
                 <h6 className="relative left-[7.5rem] lg:text-[1rem] md:text-[0.75rem] sm:text-[0.5rem] inline-block text-white opacity-10 font-jetbrains">{'printf("'}</h6>
@@ -18,6 +19,6 @@ export default function HomeText() {
                 <h6 className="text-[1rem] relative left-[7.5rem] inline-block text-white opacity-10 font-jetbrains">{'")'}</h6>
             </div>
             <CodeText text="}" />
-        </>
+        </div>
     )
 }
