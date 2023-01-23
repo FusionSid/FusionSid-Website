@@ -10,7 +10,7 @@ interface NavbarProps {
 export default function Navbar(props: NavbarProps) {
     let navigate = useNavigate();
 
-    const [showMobileNav, setShowMobileNav] = useState(false);
+    const [showMobileNav, setShowMobileNav] = useState(window.innerWidth <= 768 );
     const [navbarOpen, setNavbarOpen] = useState(false);
 
     useEffect(() => {
@@ -73,23 +73,23 @@ export default function Navbar(props: NavbarProps) {
                                 }`}
                         >
                             <ul className="flex flex-col p-24 px-[10vw]">
-                            <h3 className={"whitespace-nowrap "+linkCodeStyle2}>{"void goToPage() {"}</h3>
-                        {
-                            props.navlinks.map(
-                                (navItem) => (
-                                    <li key={navItem.id} className="whitespace-nowrap">
-                                        <h3 className={"pl-20 "+linkCodeStyle2}>char* </h3>
-                                        <Link className="text-[1.5rem] py-3 font-jetbrains inline-block text-white" to={navItem.link}>{navItem.title};</Link>
-                                    </li>
-                                )
-                            )
-                        }
-                        <li key={props.navlinks.length + 1} className="whitespace-nowrap">
-                            <Link className="text-white pl-20 py-3 text-[1.5rem] inline-block font-jetbrains" to="/terminal">Terminal</Link>
-                            <h3 className={linkCodeStyle2}>();</h3>
-                        </li>
-                        <h3 className={" "+linkCodeStyle2}>{"}"}</h3>
-                        </ul>
+                                <h3 className={"whitespace-nowrap " + linkCodeStyle2}>{"void goToPage() {"}</h3>
+                                {
+                                    props.navlinks.map(
+                                        (navItem) => (
+                                            <li key={navItem.id} className="whitespace-nowrap">
+                                                <h3 className={"pl-20 " + linkCodeStyle2}>char* </h3>
+                                                <Link className="text-[1.5rem] py-3 font-jetbrains inline-block text-white" to={navItem.link}>{navItem.title};</Link>
+                                            </li>
+                                        )
+                                    )
+                                }
+                                <li key={props.navlinks.length + 1} className="whitespace-nowrap">
+                                    <Link className="text-white pl-20 py-3 text-[1.5rem] inline-block font-jetbrains" to="/terminal">Terminal</Link>
+                                    <h3 className={linkCodeStyle2}>();</h3>
+                                </li>
+                                <h3 className={" " + linkCodeStyle2}>{"}"}</h3>
+                            </ul>
                         </div>
                     </>
                 }
