@@ -36,6 +36,9 @@ export default function Navbar(props: NavbarProps) {
             }
         };
         document.addEventListener("keydown", keyHandler);
+        return () => {
+            document.removeEventListener("keydown", keyHandler)
+        }
     });
 
     const linkCodeStyle = "inline-block pr-3 md:text-[1rem] lg:text-[1.25rem] " + styles.homeTextCode;

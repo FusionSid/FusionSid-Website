@@ -5,6 +5,18 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        fade: 'fadeOut 5s ease-in-out',
+      },
+
+      // that is actual animation
+      keyframes: theme => ({
+        fadeOut: {
+          '0%': { opacity: 1 },
+          '100%': { opacity: 0 },
+        },
+      }),
+
       colors: {
         pdblue: "#0D3580",
         plblue: "#1761B0",
