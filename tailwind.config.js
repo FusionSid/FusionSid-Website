@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       animation: {
         fade: 'fadeOut 5s ease-in-out',
+        'spin-slow': 'spin 2s linear infinite',
       },
 
       // that is actual animation

@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <>
             <HomeText />
-            <img src={Moyai} className="w-52 absolute right-24 bottom-20"></img>
+            <img src={Moyai} className="w-52 absolute right-24 bottom-20" alt="moyai"></img> 
         </>
     )
 }
