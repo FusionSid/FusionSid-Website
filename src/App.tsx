@@ -1,8 +1,8 @@
 // hooks
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 // import router
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 
 // import pages
 import * as pages from "./pages";
@@ -11,39 +11,59 @@ import * as pages from "./pages";
 import { Navbar, Footer } from "./components";
 
 // dark mode
-import { NavbarLinks, isDarkMode } from "./constants";
+import { NavbarLinks } from "./utils";
+
+import { AnimatePresence } from "framer-motion";
 
 // import base css
 import "./App.css";
 
-function App() {
-	const [darkMode, setDarkMode] = useState(isDarkMode());
-
-	useEffect(() => {
-		const darkModeUpdateHandler = (event: StorageEvent) => {
-			setDarkMode(localStorage.theme);
-		};
-		window.addEventListener("storage", darkModeUpdateHandler);
-	});
+export const AnimatedRoutes = () => {
+	const location = useLocation();
 
 	return (
-		<div className={`${darkMode === "dark" ? "dark " : ""}`}>
+		<AnimatePresence>
+			<Routes location={location} key={location.pathname}>
+				<Route path="/" element={<pages.Home />}></Route>
+				<Route path="/about" element={<pages.About />}></Route>
+				<Route path="/projects" element={<pages.Projects />}></Route>
+				<Route path="/contact" element={<pages.Contact />}></Route>
+				<Route path="/terminal" element={<pages.Terminal />}></Route>
+				<Route path="/*" element={<pages.NotFound404 />}></Route>
+			</Routes>
+		</AnimatePresence>
+	);
+};
+
+function App() {
+	const html = document.querySelector("html");
+
+	const darkModeUpdateHandler = (event: StorageEvent | null = null) => {
+		if (localStorage.theme === "dark") {
+			if (html) html.classList.add("dark");
+		} else {
+			if (html) html.classList.remove("dark");
+		}
+	};
+	window.addEventListener("storage", darkModeUpdateHandler);
+
+	useEffect(() => {
+		darkModeUpdateHandler();
+		document.body.classList.add(
+			...[
+				"transition-colors",
+				"duration-1000",
+				"bg-bglight",
+				"dark:bg-bgdark",
+			]
+		);
+	}, []);
+
+	return (
+		<div>
 			<BrowserRouter>
 				<Navbar navlinks={NavbarLinks} />
-				<Routes>
-					<Route path="/" element={<pages.Home />}></Route>
-					<Route path="/about" element={<pages.About />}></Route>
-					<Route
-						path="/projects"
-						element={<pages.Projects />}
-					></Route>
-					<Route path="/contact" element={<pages.Contact />}></Route>
-					<Route
-						path="/terminal"
-						element={<pages.Terminal />}
-					></Route>
-					<Route path="/*" element={<pages.NotFound404 />}></Route>
-				</Routes>
+				<AnimatedRoutes />
 				<Footer />
 			</BrowserRouter>
 		</div>
