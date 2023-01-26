@@ -173,6 +173,9 @@ export default function Navbar(props: NavbarProps) {
 												" transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
 											}
 											to={navItem.link}
+											onClick={() =>
+												setNavbarOpen(!navbarOpen)
+											}
 										>
 											{`<${navItem.title}/>`}
 										</Link>
@@ -189,6 +192,9 @@ export default function Navbar(props: NavbarProps) {
 											" transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
 										}
 										to="/terminal"
+										onClick={() =>
+											setNavbarOpen(!navbarOpen)
+										}
 									>
 										{"<Terminal/>"}
 									</Link>
