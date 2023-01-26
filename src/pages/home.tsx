@@ -1,6 +1,6 @@
 import { Navbar, Hero, Footer } from "../components"
-import { NavbarLinks } from "../constants"
-import { useEffect } from "react";
+import { NavbarLinks, isDarkMode } from "../constants"
+import { useEffect, useState } from "react";
 
 export default function Home() {
 
@@ -23,11 +23,22 @@ export default function Home() {
     }
   });
 
+  const [darkMode, setDarkMode] = useState(isDarkMode())
+
+  useEffect(() => {
+    const darkModeUpdateHandler = (event: StorageEvent) => {
+      setDarkMode(localStorage.theme);
+    };
+    window.addEventListener("storage", darkModeUpdateHandler)
+  })
+
   return (
-    <>
-      <Navbar navlinks={NavbarLinks} />
-      <Hero />
-      <Footer />
-    </>
+    <div className={darkMode == "dark" ? "dark" : ""}>
+      <div className="antialiased transition-colors duration-1000 bg-bglight dark:bg-bgdark">
+        <Navbar navlinks={NavbarLinks} />
+        <Hero />
+        <Footer />
+      </div>
+    </div>
   );
 }

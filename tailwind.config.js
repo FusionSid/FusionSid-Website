@@ -3,6 +3,7 @@ module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       animation: {
@@ -26,6 +27,8 @@ module.exports = {
         pblack: "#181818",
         plred: "#D2292D",
         pdred: "#AF0C15",
+        bgdark: "#222531",
+        bglight: "#dddbce",
       },
       fontFamily: {
         jetbrains: ["JetbrainsMono"],

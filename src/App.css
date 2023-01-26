@@ -17,16 +17,11 @@
 }
 
 body {
-    background-color: rgb(34, 37, 49);
     background-size: 30px 30px;
     background-image: linear-gradient(
             to right,
-            rgba(255, 255, 255, 0.01) 0.4px,
+            rgba(0, 0, 0, 0.05) 0.4px,
             transparent 0.4px
         ),
-        linear-gradient(
-            to bottom,
-            rgba(255, 255, 255, 0.01) 0.4px,
-            transparent 0.4px
-        );
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0.4px, transparent 0.4px);
 }
