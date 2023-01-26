@@ -1,21 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  darkMode: 'class',
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: "class",
   theme: {
     extend: {
       animation: {
-        fade: 'fadeOut 5s ease-in-out',
-        'spin-slow': 'spin 2s linear infinite',
+        fade: "fadeOut 5s ease-in-out",
+        "spin-slow": "spin 2s linear infinite",
       },
 
       // that is actual animation
-      keyframes: theme => ({
+      keyframes: (theme) => ({
         fadeOut: {
-          '0%': { opacity: 1 },
-          '100%': { opacity: 0 },
+          "0%": { opacity: 1 },
+          "100%": { opacity: 0 },
         },
       }),
 
@@ -33,9 +31,9 @@ module.exports = {
       fontFamily: {
         jetbrains: ["JetbrainsMono"],
         poppins: ["Poppins"],
-        poppinsbold: ["PoppinsBold"]
+        poppinsbold: ["PoppinsBold"],
       },
     },
   },
   plugins: [],
-}
+};

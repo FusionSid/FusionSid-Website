@@ -1,12 +1,12 @@
 const styles = {
-    homeTextCode: "dark:text-white dark:opacity-10 opacity-20 font-jetbrains"
-}
+    homeTextCode: "dark:text-white dark:opacity-10 opacity-20 font-jetbrains",
+};
 
-const NavbarLinks: Array<{ id: string, title: string, link: string }> = [
+const NavbarLinks: Array<{ id: string; title: string; link: string }> = [
     { id: "about", title: "About", link: "/about" },
     { id: "projects", title: "Projects", link: "/projects" },
-    { id: "contact", title: "Contact", link: "/contact" }
-]
+    { id: "contact", title: "Contact", link: "/contact" },
+];
 
 const isDarkMode = () => {
     if (
@@ -14,14 +14,9 @@ const isDarkMode = () => {
         (!("theme" in localStorage) &&
             window.matchMedia("(prefers-color-scheme: dark)").matches)
     ) {
-        return "dark"
+        return "dark";
     }
-    return "light"
-}
+    return "light";
+};
 
-
-export {
-    styles,
-    NavbarLinks,
-    isDarkMode
-}
+export { styles, NavbarLinks, isDarkMode };

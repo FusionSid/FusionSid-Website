@@ -3,25 +3,25 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "JetbrainsMono";
-    src: url("./assets/fonts/JetBrainsMono-Regular.ttf");
+	font-family: "JetbrainsMono";
+	src: url("./assets/fonts/JetBrainsMono-Regular.ttf");
 }
 
 @font-face {
-    font-family: "Poppins";
-    src: url("./assets/fonts/Poppins-Regular.ttf");
+	font-family: "Poppins";
+	src: url("./assets/fonts/Poppins-Regular.ttf");
 }
 @font-face {
-    font-family: "PoppinsBold";
-    src: url("./assets/fonts/Poppins-Bold.ttf");
+	font-family: "PoppinsBold";
+	src: url("./assets/fonts/Poppins-Bold.ttf");
 }
 
 body {
-    background-size: 30px 30px;
-    background-image: linear-gradient(
-            to right,
-            rgba(0, 0, 0, 0.05) 0.4px,
-            transparent 0.4px
-        ),
-        linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0.4px, transparent 0.4px);
+	background-size: 30px 30px;
+	background-image: linear-gradient(
+			to right,
+			rgba(0, 0, 0, 0.05) 0.4px,
+			transparent 0.4px
+		),
+		linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 0.4px, transparent 0.4px);
 }
