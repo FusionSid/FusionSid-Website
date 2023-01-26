@@ -1,5 +1,5 @@
 import HomeText from "./hometext";
-import { PersonCodingImage } from "../assets";
+import { PersonCodingImage } from "../../assets";
 
 export default function Hero() {
     return (

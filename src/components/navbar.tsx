@@ -61,7 +61,7 @@ export default function Navbar(props: NavbarProps) {
 
 	return (
 		<>
-			<nav className="transition-colors duration-1000 bg-bglight dark:bg-bgdark w-full h-24 items-center justify-between flex py-6 border-b-[0.1px] border-opacity-10 border-white">
+			<nav className="w-full h-24 items-center justify-between flex py-6 border-b-[0.1px] border-opacity-10 border-white">
 				<div className="h-24 items-center justify-between flex">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-import { styles } from "../utils";
+import { styles } from "../../utils";
 
 export default function HomeText() {
     const linkCodeStyle = "text-[0.9rem] " + styles.homeTextCode;
