@@ -1,13 +1,13 @@
 import HomeText from "./hometext";
-import { Moyai } from "../assets";
+import { PersonCodingImage } from "../assets";
 
 export default function Hero() {
     return (
         <>
             <HomeText />
             <img
-                src={Moyai}
-                className="w-52 relative bottom-20 left-[75%]"
+                src={PersonCodingImage}
+                className="w-80 relative bottom-20 left-[72%]"
                 alt="moyai"
             ></img>
             <div className="border-b-[0.1px] border-opacity-10 border-white w-full"></div>
