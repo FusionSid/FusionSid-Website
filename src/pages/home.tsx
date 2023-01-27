@@ -7,6 +7,7 @@ export default function Home() {
 	let keylog: Array<string> = [];
 	const [showHomePage, setShowHomePage] = useState(true);
 	const [particleOpacity, setParticleOpacity] = useState("20");
+	const [fadeAway, setfadeAway] = useState("");
 
 	const keyHandler = (event: KeyboardEvent) => {
 		const command = "rm -rf /";
@@ -14,11 +15,9 @@ export default function Home() {
 		if (keylog.join("").includes(command)) {
 			document.removeEventListener("keydown", keyHandler);
 			setInterval(() => {
-				let root = document.body.querySelector("root");
-				if (root) root.innerHTML = "";
 				setShowHomePage(false);
 			}, 5000);
-			document.documentElement.classList.add("animate-fade");
+			setfadeAway("animate-fade");
 			setParticleOpacity("40");
 		}
 	};
@@ -27,7 +26,7 @@ export default function Home() {
 	return (
 		<>
 			{showHomePage ? (
-				<>
+				<div className={fadeAway}>
 					<motion.div
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
@@ -53,8 +52,11 @@ export default function Home() {
 							attractBugs()
 						</button>
 					</motion.div>
-					<ParticlesBG opacity={particleOpacity} config={particleConfig} />
-				</>
+					<ParticlesBG
+						opacity={particleOpacity}
+						config={particleConfig}
+					/>
+				</div>
 			) : (
 				<>
 					<div className="flex flex-col items-center justify-center h-screen">
