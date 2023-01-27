@@ -29,3 +29,12 @@ body {
 body::-webkit-scrollbar {
 	display: none;
 }
+
+#tsparticles {
+	opacity: 0.3;
+}
+
+#tsparticles canvas {
+	position: absolute;
+	z-index: 1;
+}

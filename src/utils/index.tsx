@@ -1,3 +1,6 @@
+import particleConfig from "./particle_options.json";
+import amogusParticleConfig from "./amongus_particle_options.json";
+
 const styles = {
 	homeTextCode: "dark:text-white dark:opacity-10 opacity-20 font-jetbrains",
 };
@@ -19,4 +22,10 @@ const isDarkMode = () => {
 	return "light";
 };
 
-export { styles, NavbarLinks, isDarkMode };
+export {
+	styles,
+	NavbarLinks,
+	isDarkMode,
+	particleConfig,
+	amogusParticleConfig,
+};
