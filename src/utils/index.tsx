@@ -1,4 +1,5 @@
-import particleConfig from "./particle_options.json";
+import particleConfigDark from "./particle_options_dark.json";
+import particleConfigLight from "./particle_options_light.json";
 import amogusParticleConfig from "./amongus_particle_options.json";
 
 const styles = {
@@ -17,15 +18,16 @@ const isDarkMode = () => {
 		(!("theme" in localStorage) &&
 			window.matchMedia("(prefers-color-scheme: dark)").matches)
 	) {
-		return "dark";
+		return true;
 	}
-	return "light";
+	return false;
 };
 
 export {
 	styles,
 	NavbarLinks,
 	isDarkMode,
-	particleConfig,
+	particleConfigDark,
+	particleConfigLight,
 	amogusParticleConfig,
 };

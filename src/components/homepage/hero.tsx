@@ -1,9 +1,25 @@
 import HomeText from "./hometext";
 import { ParticlesBG } from "../particles";
-import { particleConfig } from "../../utils";
+import {
+	particleConfigLight,
+	particleConfigDark,
+	isDarkMode,
+} from "../../utils";
 import { PersonCodingImage } from "../../assets";
+import { useState } from "react";
 
 export default function Hero() {
+	const [darkMode, setDarkMode] = useState(isDarkMode());
+
+	const darkModeUpdateHandler2 = (event: StorageEvent | null = null) => {
+		if (localStorage.theme === "light") {
+			setDarkMode(false)
+		} else {
+			setDarkMode(true)
+		}
+	};
+	window.addEventListener("storage", darkModeUpdateHandler2);
+
 	return (
 		<>
 			<HomeText />
@@ -13,7 +29,10 @@ export default function Hero() {
 				alt="moyai"
 			></img>
 			<div className="border-b-[0.1px] border-opacity-10 border-white w-full"></div>
-			<ParticlesBG id={"tsp1"} config={particleConfig} />
+			<ParticlesBG
+				id={"tsp1"}
+				config={darkMode ? particleConfigDark : particleConfigLight}
+			/>
 		</>
 	);
 }
