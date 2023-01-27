@@ -36,18 +36,17 @@ export const AnimatedRoutes = () => {
 };
 
 function App() {
-	const html = document.querySelector("html");
-
 	const darkModeUpdateHandler = (event: StorageEvent | null = null) => {
-		if (localStorage.theme === "dark") {
-			if (html) html.classList.add("dark");
+		if (localStorage.theme === "light") {
+			document.documentElement.classList.remove("dark");
 		} else {
-			if (html) html.classList.remove("dark");
+			document.documentElement.classList.add("dark");
 		}
 	};
 	window.addEventListener("storage", darkModeUpdateHandler);
 
 	useEffect(() => {
+		document.documentElement.classList.add("dark");
 		darkModeUpdateHandler();
 		document.body.classList.add(
 			...[

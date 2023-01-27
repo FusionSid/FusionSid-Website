@@ -37,9 +37,9 @@ export default function Home() {
 						<button
 							onClick={() => {
 								let newTheme =
-									localStorage.getItem("theme") === "dark"
-										? "light"
-										: "dark";
+									localStorage.getItem("theme") === "light"
+										? "dark"
+										: "light";
 								localStorage.setItem("theme", newTheme);
 								window.dispatchEvent(
 									new StorageEvent("storage")
