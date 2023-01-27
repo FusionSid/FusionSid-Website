@@ -1,3 +1,3 @@
 export default function Footer() {
-	return <>Footer placeholder eeeeee</>;
+	return <div className="relative z-10">Footer placeholder eeeeee</div>;
 }

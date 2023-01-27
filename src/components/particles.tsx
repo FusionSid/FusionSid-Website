@@ -18,8 +18,7 @@ export const ParticlesBG = (props: any) => {
 
 	return (
 		<Particles
-			id="tsparticles"
-			className={`z-0 opacity-${props.opacity}`}
+			id={props.id}
 			init={particlesInit}
 			loaded={particlesLoaded}
 			options={props.config}

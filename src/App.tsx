@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import * as pages from "./pages";
 
 // import footer and navbar
-import { Navbar, Footer } from "./components";
+import { Navbar, Footer, ThemeButton } from "./components";
 
 // dark mode
 import { NavbarLinks } from "./utils";
@@ -63,6 +63,7 @@ function App() {
 			<BrowserRouter>
 				<Navbar navlinks={NavbarLinks} />
 				<AnimatedRoutes />
+				<ThemeButton />
 				<Footer />
 			</BrowserRouter>
 		</div>

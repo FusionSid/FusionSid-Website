@@ -30,11 +30,16 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
-/* #tsparticles {
-	opacity: 0.3;
-} */
-
-#tsparticles canvas {
+#tsp1 canvas,
+#tsp2 canvas {
 	position: absolute;
 	z-index: 1;
+}
+
+#tsp1 {
+	opacity: 0.3;
+}
+
+#tsp2 {
+	opacity: 1;
 }
