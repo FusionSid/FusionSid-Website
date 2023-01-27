@@ -30,9 +30,9 @@ body::-webkit-scrollbar {
 	display: none;
 }
 
-#tsparticles {
+/* #tsparticles {
 	opacity: 0.3;
-}
+} */
 
 #tsparticles canvas {
 	position: absolute;

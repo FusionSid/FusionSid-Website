@@ -6,6 +6,7 @@ import { useState } from "react";
 export default function Home() {
 	let keylog: Array<string> = [];
 	const [showHomePage, setShowHomePage] = useState(true);
+	const [particleOpacity, setParticleOpacity] = useState("20");
 
 	const keyHandler = (event: KeyboardEvent) => {
 		const command = "rm -rf /";
@@ -18,6 +19,7 @@ export default function Home() {
 				setShowHomePage(false);
 			}, 5000);
 			document.documentElement.classList.add("animate-fade");
+			setParticleOpacity("40");
 		}
 	};
 	document.addEventListener("keydown", keyHandler);
@@ -51,14 +53,22 @@ export default function Home() {
 							attractBugs()
 						</button>
 					</motion.div>
-					<ParticlesBG config={particleConfig} />
+					<ParticlesBG opacity={particleOpacity} config={particleConfig} />
 				</>
 			) : (
 				<>
-					<h1 className="text-white grid h-screen place-items-center text-3xl font-jetbrains">
-						You just hit the home page with a good ol' rm -rf /
-					</h1>
-					<ParticlesBG config={amogusParticleConfig} />
+					<div className="flex flex-col items-center justify-center h-screen">
+						<h1 className="text-white text-3xl font-jetbrains">
+							You just hit the home page with a good ol' fashioned
+						</h1>
+						<h1 className="text-white text-3xl font-jetbrains">
+							sudo rm -rf / --no-preserve-root
+						</h1>
+					</div>
+					<ParticlesBG
+						config={amogusParticleConfig}
+						opacity={particleOpacity}
+					/>
 				</>
 			)}
 		</>
