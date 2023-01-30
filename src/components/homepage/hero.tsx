@@ -13,15 +13,19 @@ export default function Hero() {
 
 	const darkModeUpdateHandler2 = (event: StorageEvent | null = null) => {
 		if (localStorage.theme === "light") {
-			setDarkMode(false)
+			setDarkMode(false);
 		} else {
-			setDarkMode(true)
+			setDarkMode(true);
 		}
 	};
 	window.addEventListener("storage", darkModeUpdateHandler2);
 
 	return (
-		<>
+		<div>
+			<ParticlesBG
+				id={"tsp1"}
+				config={darkMode ? particleConfigDark : particleConfigLight}
+			/>
 			<HomeText />
 			<img
 				src={PersonCodingImage}
@@ -29,10 +33,6 @@ export default function Hero() {
 				alt="moyai"
 			></img>
 			<div className="border-b-[0.1px] border-opacity-10 border-white w-full"></div>
-			<ParticlesBG
-				id={"tsp1"}
-				config={darkMode ? particleConfigDark : particleConfigLight}
-			/>
-		</>
+		</div>
 	);
 }

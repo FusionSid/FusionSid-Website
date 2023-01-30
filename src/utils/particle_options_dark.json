@@ -106,5 +106,8 @@
       }
     }
   },
-  "retina_detect": true
+  "retina_detect": true,
+  "fullScreen": {
+    "enable": false
+  }
 }
