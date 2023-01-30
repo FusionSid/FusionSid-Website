@@ -1,4 +1,4 @@
-import { Hero, ParticlesBG } from "../components";
+import { Homepage, ParticlesBG } from "../components";
 import { amogusParticleConfig } from "../utils";
 import { motion } from "framer-motion";
 import { useState } from "react";
@@ -29,9 +29,9 @@ export default function Home() {
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						exit={{ opacity: 0 }}
-						// className="relative z-10"
 					>
-						<Hero />
+						<Homepage.Hero />
+						<Homepage.SkillsSection />
 					</motion.div>
 				</div>
 			) : (

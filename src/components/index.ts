@@ -1,7 +1,7 @@
 // import components
 import Navbar from "./navbar"
 import Footer from "./footer"
-import Hero from "./homepage/hero"
+import * as Homepage from "./homepage"
 import ThemeButton from "./theme"
 import { ParticlesBG } from "./particles"
 
@@ -9,7 +9,7 @@ import { ParticlesBG } from "./particles"
 export {
     Navbar,
     Footer,
-    Hero,
     ThemeButton,
-    ParticlesBG
+    ParticlesBG,
+    Homepage
 }
