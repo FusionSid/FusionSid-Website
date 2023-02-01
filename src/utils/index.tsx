@@ -17,7 +17,6 @@ const techLogoImages = [
 	"https://github.com/Pycord-Development/guide/blob/main/static/img/logo.png?raw=true",
 	"https://www.svgrepo.com/show/374094/sqlite.svg",
 	"https://www.svgrepo.com/show/354272/redis.svg",
-	"https://www.svgrepo.com/show/373924/nginx.svg",
 	"https://cdn.worldvectorlogo.com/logos/fastapi-1.svg",
 	"https://www.svgrepo.com/show/353564/cloudflare.svg",
 	"https://www.svgrepo.com/show/452092/react.svg",
