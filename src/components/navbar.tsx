@@ -135,22 +135,44 @@ export default function Navbar(props: NavbarProps) {
 					</ul>
 				) : (
 					<>
-						<div
-							id="nav-icon"
-							onClick={() => {
-								let element =
-									document.getElementById("nav-icon");
-								if (element) element.classList.toggle("open");
-								setNavbarOpen(!navbarOpen);
-							}}
-						>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-							<span></span>
-						</div>
+						{navbarOpen ? (
+							<div
+								id="nav-icon"
+								className="open"
+								onClick={() => {
+									let element =
+										document.getElementById("nav-icon");
+									if (element)
+										element.classList.toggle("open");
+									setNavbarOpen(!navbarOpen);
+								}}
+							>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						) : (
+							<div
+								id="nav-icon"
+								onClick={() => {
+									let element =
+										document.getElementById("nav-icon");
+									if (element)
+										element.classList.toggle("open");
+									setNavbarOpen(!navbarOpen);
+								}}
+							>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+								<span></span>
+							</div>
+						)}
 
 						<div
 							className={`fixed top-0 right-0 z-40 h-full w-full bg-[#9a9787] p-5 text-white duration-300 ease-in-out dark:bg-pgrey ${

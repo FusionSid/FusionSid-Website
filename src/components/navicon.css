@@ -7,7 +7,11 @@
 	right: 2.5rem;
 	height: 40px;
 	z-index: 99;
-    scale: 0.8;
+	scale: 0.8;
+}
+
+#nav-icon:hover span {
+	background: #548fce;
 }
 
 #nav-icon span {
