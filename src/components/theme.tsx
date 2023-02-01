@@ -9,9 +9,9 @@ export default function ThemeButton() {
 				localStorage.setItem("theme", newTheme);
 				window.dispatchEvent(new StorageEvent("storage"));
 			}}
-			className="hover:animate-bounce fixed z-10 bottom-6 left-8 whitespace-nowrap group 
-                    bg-black bg-opacity-25 rounded-xl shadow-2xl p-2 dark:text-white md:text-[1rem] lg:text-[1.125rem] 
-                    inline-block font-jetbrains hover:text-plblue dark:hover:text-pllblue"
+			className="group fixed bottom-6 right-8 z-10 inline-block whitespace-nowrap 
+                    rounded-xl bg-black bg-opacity-25 p-2 font-jetbrains shadow-2xl hover:animate-bounce hover:text-plblue 
+                    dark:text-white dark:hover:text-pllblue md:text-[1rem] lg:text-[1.125rem]"
 		>
 			attractBugs()
 		</button>
