@@ -28,8 +28,10 @@ body::-webkit-scrollbar {
 
 #tsp1 {
 	opacity: 0.5;
+	z-index: 1;
 }
 
 #tsp2 {
+	z-index: 1;
 	opacity: 1;
 }
