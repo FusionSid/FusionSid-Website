@@ -12,31 +12,107 @@ const NavbarLinks: Array<{ id: string; title: string; link: string }> = [
 	{ id: "contact", title: "Contact", link: "/contact" },
 ];
 
-const techLogoImages = [
-	"https://www.svgrepo.com/show/354200/postgresql.svg",
-	"https://github.com/Pycord-Development/guide/blob/main/static/img/logo.png?raw=true",
-	"https://www.svgrepo.com/show/374094/sqlite.svg",
-	"https://www.svgrepo.com/show/354272/redis.svg",
-	"https://cdn.worldvectorlogo.com/logos/fastapi-1.svg",
-	"https://www.svgrepo.com/show/353564/cloudflare.svg",
-	"https://www.svgrepo.com/show/452092/react.svg",
-	"https://github.com/Rick-Lang/rickroll-lang/blob/main/img/newlogo.jpg?raw=true",
-	"https://www.svgrepo.com/show/452210/git.svg",
-	"https://www.svgrepo.com/show/448221/docker.svg",
-	"https://www.svgrepo.com/show/452075/node-js.svg",
-	"https://www.svgrepo.com/show/374171/vscode.svg",
-	"https://www.svgrepo.com/show/374146/typescript-official.svg",
-	"https://www.svgrepo.com/show/448245/oracle.svg",
-	"https://www.svgrepo.com/show/473611/flask.svg",
-	"https://www.svgrepo.com/show/374118/tailwind.svg",
-];
-
-const languageLogoImages = [
-	"https://www.svgrepo.com/show/452091/python.svg",
-	"https://www.svgrepo.com/show/452045/js.svg",
-	"https://www.svgrepo.com/show/373482/c.svg",
-	"https://www.svgrepo.com/show/452228/html-5.svg",
-	"https://www.svgrepo.com/show/452185/css-3.svg",
+const technoligies = [
+	[
+		"Python",
+		"https://www.svgrepo.com/show/452091/python.svg",
+		"https://www.python.org/",
+	],
+	[
+		"Typescript",
+		"https://www.svgrepo.com/show/374146/typescript-official.svg",
+		"https://www.typescriptlang.org/",
+	],
+	[
+		"Fastapi",
+		"https://cdn.worldvectorlogo.com/logos/fastapi-1.svg",
+		"https://fastapi.tiangolo.com/",
+	],
+	[
+		"Javascript",
+		"https://www.svgrepo.com/show/452045/js.svg",
+		"https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+	],
+	[
+		"Tailwind",
+		"https://www.svgrepo.com/show/374118/tailwind.svg",
+		"https://tailwindcss.com/",
+	],
+	[
+		"C",
+		"https://www.svgrepo.com/show/373482/c.svg",
+		"https://en.wikipedia.org/wiki/C_(programming_language)",
+	],
+	[
+		"HTML",
+		"https://www.svgrepo.com/show/452228/html-5.svg",
+		"https://en.wikipedia.org/wiki/HTML",
+	],
+	[
+		"Css",
+		"https://www.svgrepo.com/show/452185/css-3.svg",
+		"https://developer.mozilla.org/en-US/docs/Web/CSS",
+	],
+	[
+		"Pycord",
+		"https://github.com/Pycord-Development/guide/blob/main/static/img/logo.png?raw=true",
+		"https://pycord.dev/",
+	],
+	[
+		"Postgresql",
+		"https://www.svgrepo.com/show/354200/postgresql.svg",
+		"https://www.postgresql.org/",
+	],
+	[
+		"Sqlite",
+		"https://www.svgrepo.com/show/374094/sqlite.svg",
+		"https://sqlite.org/index.html",
+	],
+	[
+		"redis",
+		"https://www.svgrepo.com/show/354272/redis.svg",
+		"https://redis.io/",
+	],
+	[
+		"React js",
+		"https://www.svgrepo.com/show/452092/react.svg",
+		"https://react.dev/",
+	],
+	[
+		"Git",
+		"https://www.svgrepo.com/show/452210/git.svg",
+		"https://git-scm.com/",
+	],
+	[
+		"Docker",
+		"https://www.svgrepo.com/show/448221/docker.svg",
+		"https://www.docker.com/",
+	],
+	[
+		"Node js",
+		"https://www.svgrepo.com/show/452075/node-js.svg",
+		"https://nodejs.org/en",
+	],
+	[
+		"VsCode",
+		"https://www.svgrepo.com/show/374171/vscode.svg",
+		"https://code.visualstudio.com/",
+	],
+	[
+		"Oracle",
+		"https://www.svgrepo.com/show/448245/oracle.svg",
+		"https://www.oracle.com/cloud/",
+	],
+	[
+		"Flask",
+		"https://www.svgrepo.com/show/473611/flask.svg",
+		"https://flask.palletsprojects.com/en/2.2.x/",
+	],
+	[
+		"Cloudflare",
+		"https://www.svgrepo.com/show/353564/cloudflare.svg",
+		"https://www.cloudflare.com/",
+	],
 ];
 
 const isDarkMode = () => {
@@ -53,9 +129,8 @@ const isDarkMode = () => {
 export {
 	styles,
 	NavbarLinks,
-	techLogoImages,
+	technoligies,
 	isDarkMode,
-	languageLogoImages,
 	particleConfigDark,
 	particleConfigLight,
 	amogusParticleConfig,
