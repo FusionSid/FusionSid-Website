@@ -26,12 +26,10 @@ body::-webkit-scrollbar {
 	z-index: 1;
 }
 
-#tsp1 {
+#tsp1 canvas {
 	opacity: 0.5;
-	z-index: 1;
 }
 
 #tsp2 {
-	z-index: 1;
 	opacity: 1;
 }
