@@ -7,7 +7,7 @@
 	right: 2.5rem;
 	height: 40px;
 	z-index: 99;
-	scale: 0.8;
+	scale: 0.7;
 }
 
 #nav-icon:hover span {
@@ -65,13 +65,13 @@
 }
 
 #nav-icon.open span:nth-child(1) {
-	left: 5px;
-	top: 7px;
+	left: 4px;
+	top: 8px;
 }
 
 #nav-icon.open span:nth-child(2) {
-	left: calc(50% - 5px);
-	top: 7px;
+	left: calc(50% - 2.5px);
+	top: 8px;
 }
 
 #nav-icon.open span:nth-child(3) {
@@ -85,11 +85,11 @@
 }
 
 #nav-icon.open span:nth-child(5) {
-	left: 5px;
-	top: 29px;
+	left: 4px;
+	top: 27px;
 }
 
 #nav-icon.open span:nth-child(6) {
-	left: calc(50% - 5px);
-	top: 29px;
+	left: calc(50% - 2.5px);
+	top: 27px;
 }
