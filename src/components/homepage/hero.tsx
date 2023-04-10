@@ -21,18 +21,15 @@ export default function Hero() {
 	window.addEventListener("storage", darkModeUpdateHandler2);
 
 	return (
-		<div>
+		<>
 			<ParticlesBG
 				id={"tsp1"}
 				config={darkMode ? particleConfigDark : particleConfigLight}
 			/>
-			<HomeText />
-			<img
-				src={PersonCodingImage}
-				className="w-80 relative bottom-20 left-[72%]"
-				alt="moyai"
-			></img>
-			<div className="border-b-[0.1px] border-opacity-10 border-white w-full"></div>
-		</div>
+			<div className="pt-[15vh] h-screen">
+				<HomeText />
+			</div>
+
+		</>
 	);
 }
