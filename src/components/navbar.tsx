@@ -70,7 +70,7 @@ export default function Navbar(props: NavbarProps) {
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 1090.000000 2001.000000"
-						className="ml-10 mr-2 flex h-12 w-12 gap-3 hover:animate-spin-slow dark:fill-white lg:h-14 lg:w-14"
+						className="ml-10 mr-2 flex h-12 w-12 gap-3 hover:animate-spin-slow dark:fill-white lg:h-14 lg:w-14 hover:cursor-pointer"
 						onClick={() => navigate("/")}
 					>
 						<g
