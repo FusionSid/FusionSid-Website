@@ -5,7 +5,6 @@ import {
 	particleConfigDark,
 	isDarkMode,
 } from "../../utils";
-import { PersonCodingImage } from "../../assets";
 import { useState } from "react";
 
 export default function Hero() {
@@ -26,10 +25,9 @@ export default function Hero() {
 				id={"tsp1"}
 				config={darkMode ? particleConfigDark : particleConfigLight}
 			/>
-			<div className="pt-[15vh] h-screen">
+			<div className="h-screen pt-[15vh] w-full border-b-[0.1px] border-white border-opacity-10">
 				<HomeText />
 			</div>
-
 		</>
 	);
 }
