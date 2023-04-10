@@ -4,6 +4,8 @@ export default function HomeText() {
 	const linkCodeStyle =
 		"text-[0.8rem] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem] " +
 		styles.homeTextCode;
+	const linkCodeStyle2 =
+		"text-[0.8rem] sm:text-[1rem] md:text-[1.5rem] " + styles.homeTextCode;
 
 	const [mobileVersion, setMobileVersion] = useState(
 		window.innerWidth <= 885
@@ -24,7 +26,7 @@ export default function HomeText() {
 	return (
 		<div className="m-10">
 			{!mobileVersion ? (
-				<>
+				<div className="pt-[15vh]">
 					<h3 className={linkCodeStyle}>{"void sayHello() {"}</h3>
 
 					<div className="whitespace-nowrap">
@@ -53,9 +55,33 @@ export default function HomeText() {
 					</div>
 
 					<h3 className={linkCodeStyle}>{"}"}</h3>
-				</>
+				</div>
 			) : (
-				<></>
+				<>
+					<h3 className={linkCodeStyle2}>{"def hello() -> str:"}</h3>
+					<br />
+					<h3 className={linkCodeStyle2 + " ml-14"}>
+						{'return ("""'}
+					</h3>
+					<br />
+					<div className="flex flex-col items-center">
+						<h3 className="font-poppinsbold text-[2.5rem] text-black dark:text-white sm:text-[3rem] md:text-[3.5rem]">
+							Hey! i'm
+						</h3>
+						<h1 className="font-poppinsbold text-[4.7rem] text-[#1761B0] sm:text-[8rem] leading-[4rem] sm:leading-[6.5rem] md:text-[9.5rem] md:leading-[7.5rem]">
+							Siddhesh
+						</h1>
+						<br />
+						<h3 className="font-poppinsbold text-[2.5rem] text-black dark:text-white sm:text-[3rem] md:text-[3.5rem]">
+							aka
+						</h3>
+						<h1 className="font-poppinsbold text-[4.7rem] text-[#D2292D] sm:text-[8rem] leading-[4rem] sm:leading-[7rem] md:text-[9.5rem] md:leading-[7.5rem]">
+							FusionSid
+						</h1>
+					</div>
+					<br />
+					<h3 className={linkCodeStyle2 + " ml-14"}>{'""")'}</h3>
+				</>
 			)}
 		</div>
 	);

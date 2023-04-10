@@ -25,7 +25,7 @@ export default function Hero() {
 				id={"tsp1"}
 				config={darkMode ? particleConfigDark : particleConfigLight}
 			/>
-			<div className="h-screen pt-[15vh] w-full border-b-[0.1px] border-white border-opacity-10">
+			<div className="h-screen w-full border-b-[0.1px] border-white border-opacity-10">
 				<HomeText />
 			</div>
 		</>
