@@ -82,13 +82,13 @@ export default function Footer() {
 					</div>
 				</div>
 				<div className="flex flex-col gap-4 pb-10 text-center sm:flex-row sm:gap-10 sm:pb-0">
-					<Link className={linkStyle} to="/">
+					<Link className={linkStyle} to="/about">
 						aboutMe()
 					</Link>
-					<Link className={linkStyle} to="/">
+					<Link className={linkStyle} to="/projects">
 						projects()
 					</Link>
-					<Link className={linkStyle} to="/">
+					<Link className={linkStyle} to="/contact">
 						contact()
 					</Link>
 				</div>
