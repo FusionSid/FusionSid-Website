@@ -19,6 +19,9 @@
 body::-webkit-scrollbar {
 	display: none;
 }
+body {
+	background: #232530;
+}
 
 #tsp1 canvas,
 #tsp2 canvas {
