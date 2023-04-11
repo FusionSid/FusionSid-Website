@@ -10,7 +10,7 @@ export default function SkillsSection() {
 	return (
 		<WhenInView
 			div={
-				<div className="z-10 m-5 border-white border-opacity-10 lg:border-b-[0.1px]">
+				<div className="p-5 py-7 border-white border-opacity-10 lg:border-b-[0.1px]">
 					<h1 className={skillsHeader}>{"<skills>"}</h1>
 					<div className="flex flex-col justify-center lg:flex-row">
 						<div className="container mx-auto">
