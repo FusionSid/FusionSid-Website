@@ -1,5 +1,7 @@
 import { styles } from "../../utils";
 import { useState, useEffect } from "react";
+import WavyText from "../textspan";
+
 export default function HomeText() {
 	const linkCodeStyle =
 		"text-[0.8rem] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem] " +
@@ -39,7 +41,7 @@ export default function HomeText() {
 							Hey! i'm
 						</h3>
 						<h1 className="xl:leading-[10rem inline-block font-poppinsbold text-[7rem] leading-[7rem] text-[#1761B0] lg:text-[7.75rem] lg:leading-[8.75rem] xl:text-[10rem] 2xl:text-[13rem]">
-							Siddhesh
+							<WavyText text="Siddhesh" replay={true} />
 						</h1>
 						<br />
 						<span className="inline-block md:w-[5rem] lg:w-[7rem] xl:w-[6.5rem] 2xl:w-[4.5rem]"></span>
@@ -47,9 +49,9 @@ export default function HomeText() {
 							aka
 						</h3>
 						<h1 className="inline-block font-poppinsbold text-[7rem] leading-[7rem] text-[#D2292D] lg:text-[7.75rem] lg:leading-[7.75rem] xl:text-[10rem]  xl:leading-[10rem] 2xl:text-[13rem] 2xl:leading-[13rem]">
-							FusionSid
+							<WavyText text="FusionSid" replay={true} />
 						</h1>
-						<h3 className={linkCodeStyle + " inline-block"}>
+						<h3 className={linkCodeStyle + " z-30 inline-block"}>
 							{'")'}
 						</h3>
 					</div>
@@ -68,15 +70,15 @@ export default function HomeText() {
 						<h3 className="font-poppinsbold text-[2.5rem] text-black dark:text-white sm:text-[3rem] md:text-[3.5rem]">
 							Hey! i'm
 						</h3>
-						<h1 className="font-poppinsbold text-[4.7rem] text-[#1761B0] sm:text-[8rem] leading-[4rem] sm:leading-[6.5rem] md:text-[9.5rem] md:leading-[7.5rem]">
-							Siddhesh
+						<h1 className="font-poppinsbold text-[4.7rem] leading-[4rem] text-[#1761B0] sm:text-[8rem] sm:leading-[6.5rem] md:text-[9.5rem] md:leading-[7.5rem]">
+							<WavyText text="Siddhesh" replay={true} />
 						</h1>
 						<br />
 						<h3 className="font-poppinsbold text-[2.5rem] text-black dark:text-white sm:text-[3rem] md:text-[3.5rem]">
 							aka
 						</h3>
-						<h1 className="font-poppinsbold text-[4.7rem] text-[#D2292D] sm:text-[8rem] leading-[4rem] sm:leading-[7rem] md:text-[9.5rem] md:leading-[7.5rem]">
-							FusionSid
+						<h1 className="font-poppinsbold text-[4.7rem] leading-[4rem] text-[#D2292D] sm:text-[8rem] sm:leading-[7rem] md:text-[9.5rem] md:leading-[7.5rem]">
+							<WavyText text="FusionSid" replay={true} />
 						</h1>
 					</div>
 					<br />
