@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function SkillsSection() {
 	const skillsHeader =
 		"dark:text-white text-[1.5rem] sm:text-[2rem] font-jetbrains";
-	const technologiesStyle = "w-[25%] sm:w-[45%] rounded mx-auto my-10";
+	const technologiesStyle = "w-[25%] sm:w-[45%] rounded mx-auto my-10 drop-shadow-2xl";
 
 	return (
 		<WhenInView
