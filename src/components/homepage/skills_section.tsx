@@ -10,7 +10,7 @@ export default function SkillsSection() {
 	return (
 		<WhenInView
 			div={
-				<div className="p-5 py-7 border-white border-opacity-10 lg:border-b-[0.1px]">
+				<div className="border-b-[0.1px] border-black border-opacity-10 p-5 py-7 dark:border-white dark:border-opacity-10">
 					<h1 className={skillsHeader}>{"<skills>"}</h1>
 					<div className="flex flex-col justify-center lg:flex-row">
 						<div className="container mx-auto">
@@ -29,9 +29,16 @@ export default function SkillsSection() {
 													visible: {
 														opacity: 1,
 														y: 0,
-														transition: { duration: 0.55, ease: "easeInOut", delay: index*0.2},
+														transition: {
+															duration: 0.55,
+															ease: "easeInOut",
+															delay: index * 0.2,
+														},
 													},
-													hidden: { opacity: 0, y: 200 },
+													hidden: {
+														opacity: 0,
+														y: 200,
+													},
 												}}
 											>
 												<a

@@ -65,12 +65,12 @@ export default function Navbar(props: NavbarProps) {
 
 	return (
 		<>
-			<nav className="relative z-10 flex h-24 w-full items-center justify-between border-b-[0.1px] border-white border-opacity-10 py-6">
+			<nav className="relative z-10 flex h-24 w-full items-center justify-between border-b-[0.1px] border-black border-opacity-10 py-6 dark:border-white dark:border-opacity-10">
 				<div className="flex h-24 items-center justify-between">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 1090.000000 2001.000000"
-						className="ml-10 mr-2 flex h-12 w-12 gap-3 hover:animate-spin-slow dark:fill-white lg:h-14 lg:w-14 hover:cursor-pointer"
+						className="ml-10 mr-2 flex h-12 w-12 gap-3 hover:animate-spin-slow hover:cursor-pointer dark:fill-white lg:h-14 lg:w-14"
 						onClick={() => navigate("/")}
 					>
 						<g
@@ -175,7 +175,7 @@ export default function Navbar(props: NavbarProps) {
 						)}
 
 						<div
-							className={`fixed top-0 right-0 z-40 h-full w-full bg-[#9a9787] p-5 text-white duration-300 ease-in-out dark:bg-pgrey ${
+							className={`fixed right-0 top-0 z-40 h-full w-full bg-[#9a9787] p-5 text-white duration-300 ease-in-out dark:bg-pgrey ${
 								navbarOpen
 									? "translate-x-0 "
 									: "translate-x-full"
