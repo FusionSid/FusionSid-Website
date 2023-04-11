@@ -6,6 +6,7 @@ import {
 	isDarkMode,
 } from "../../utils";
 import { useState } from "react";
+import ScrollDown from "./scrolldown";
 
 export default function Hero() {
 	const [darkMode, setDarkMode] = useState(isDarkMode());
@@ -25,8 +26,9 @@ export default function Hero() {
 				id={"tsp1"}
 				config={darkMode ? particleConfigDark : particleConfigLight}
 			/>
-			<div className="h-screen w-full border-b-[0.1px] border-white border-opacity-10">
+			<div className="h-screen w-full border-b-[0.1px] border-black border-opacity-10 dark:border-white dark:border-opacity-10">
 				<HomeText />
+				<ScrollDown />
 			</div>
 		</>
 	);
