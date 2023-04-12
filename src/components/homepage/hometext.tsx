@@ -1,6 +1,7 @@
 import { styles } from "../../utils";
 import { useState, useEffect } from "react";
 import WavyText from "../textspan";
+import { motion } from "framer-motion";
 
 export default function HomeText() {
 	const linkCodeStyle =
@@ -12,6 +13,7 @@ export default function HomeText() {
 	const [mobileVersion, setMobileVersion] = useState(
 		window.innerWidth <= 885
 	);
+	const [showErrorDiv, setShowErrorDiv] = useState(false);
 
 	useEffect(() => {
 		// if window reaches certain width switch to side navbar
@@ -25,6 +27,9 @@ export default function HomeText() {
 			window.removeEventListener("resize", windowWidthListener);
 		};
 	});
+
+	let timeout: NodeJS.Timeout;
+
 	return (
 		<div className="m-10">
 			{!mobileVersion ? (
@@ -54,6 +59,67 @@ export default function HomeText() {
 						<h3 className={linkCodeStyle + " z-30 inline-block"}>
 							{'")'}
 						</h3>
+						<h3
+							onMouseOver={() => {
+								timeout = setTimeout(() => {
+									setShowErrorDiv(true);
+								}, 500);
+							}}
+							onMouseLeave={() => {
+								setShowErrorDiv(false);
+								clearTimeout(timeout);
+							}}
+							style={{ opacity: 0 }}
+							className={
+								linkCodeStyle +
+								" relative z-30 inline-block cursor-pointer opacity-[0]"
+							}
+						>
+							{";"}
+						</h3>
+						{showErrorDiv && (
+							<motion.span animate={{
+								opacity: 1,
+								transition: {
+									duration: 0.45,
+									ease: "easeInOut",
+									delay: 1,
+								},
+							}}
+							initial={{
+								opacity: 0,
+							}}>
+								<h3
+									className={
+										"relative right-3 top-10 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+									}
+								>
+									{"^"}
+								</h3>
+								<h3
+									className={
+										"relative right-6 top-16 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+									}
+								>
+									{";"}
+								</h3>
+								<br />
+								<h3
+									className={
+										"z-30 inline-block font-jetbrains text-[0.8rem] text-[#ED6C72] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+									}
+								>
+									error:
+								</h3>
+								<h3
+									className={
+										"z-30 inline-block font-jetbrains text-[0.8rem] text-[#ACB2BE] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+									}
+								>
+									&nbsp; expected ';' after expression
+								</h3>
+							</motion.span>
+						)}
 					</div>
 
 					<h3 className={linkCodeStyle}>{"}"}</h3>
