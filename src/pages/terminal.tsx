@@ -1,3 +1,3 @@
 export default function Terminal() {
-    return <></>;
+    return <>PAGE TODO</>;
 }
