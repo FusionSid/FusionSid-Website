@@ -63,7 +63,7 @@ export default function Navbar(props: NavbarProps) {
 		"hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black dark:before:bg-white before:absolute before:left-0 before:bottom-0";
 
 	let navigate = useNavigate();
-	const cubicCurve = [0.45, 0.06, 1, 1.5];
+	const cubicCurve = [0.27, 0.51, 0.83, 0.67];
 
 	return (
 		<>
