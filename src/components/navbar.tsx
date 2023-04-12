@@ -63,6 +63,7 @@ export default function Navbar(props: NavbarProps) {
 		"hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black dark:before:bg-white before:absolute before:left-0 before:bottom-0";
 
 	let navigate = useNavigate();
+	const cubicCurve = [0.45, 0.06, 1, 1.5];
 
 	return (
 		<>
@@ -74,7 +75,7 @@ export default function Navbar(props: NavbarProps) {
 							x: 0,
 							transition: {
 								duration: 0.45,
-								ease: "easeInOut",
+								type: "spring",
 								delay: 1,
 							},
 						}}
@@ -89,13 +90,12 @@ export default function Navbar(props: NavbarProps) {
 					>
 						<g>
 							<rect x="157.056" width="33" height="620" rx="7" />
-
 							<motion.rect
 								animate={{
 									height: 323.597,
 									transition: {
 										duration: 1.0,
-										ease: "easeInOut",
+										ease: cubicCurve,
 										delay: 1.45,
 									},
 								}}
@@ -106,7 +106,7 @@ export default function Navbar(props: NavbarProps) {
 								width="32.7254"
 								height="323.597"
 								rx="7"
-								transform="rotate(-30 0 17.9004)"
+								transform="scale(-1, -1) translate(-190.1, -300) rotate(-30 0 17.9004)"
 							/>
 
 							<motion.rect
@@ -114,7 +114,7 @@ export default function Navbar(props: NavbarProps) {
 									height: 323.597,
 									transition: {
 										duration: 1.0,
-										ease: "easeInOut",
+										ease: cubicCurve,
 										delay: 1.45,
 									},
 								}}
@@ -126,7 +126,7 @@ export default function Navbar(props: NavbarProps) {
 								width="32.7254"
 								height="323.597"
 								rx="7"
-								transform="rotate(30 318.7 1.53772)"
+								transform="scale(-1, -1) translate(-504, -300) rotate(30 318.7 1.53772)"
 							/>
 
 							<motion.rect
@@ -134,7 +134,7 @@ export default function Navbar(props: NavbarProps) {
 									height: 323.597,
 									transition: {
 										duration: 1.0,
-										ease: "easeInOut",
+										ease: cubicCurve,
 										delay: 1.45,
 									},
 								}}
@@ -146,7 +146,7 @@ export default function Navbar(props: NavbarProps) {
 								width="32.7254"
 								height="323.597"
 								rx="7"
-								transform="rotate(-150 28.3975 619.606)"
+								transform="scale(-1, -1) translate(-190.1, -942.84)  rotate(-150 28.3975 619.606)"
 							/>
 
 							<motion.rect
@@ -154,7 +154,7 @@ export default function Navbar(props: NavbarProps) {
 									height: 323.597,
 									transition: {
 										duration: 1.0,
-										ease: "easeInOut",
+										ease: cubicCurve,
 										delay: 1.45,
 									},
 								}}
@@ -166,7 +166,7 @@ export default function Navbar(props: NavbarProps) {
 								width="32.7254"
 								height="323.597"
 								rx="7"
-								transform="rotate(150 347.097 603.243)"
+								transform="scale(-1, -1) translate(-504, -942.84) rotate(150 347.097 603.243)"
 							/>
 						</g>
 					</motion.svg>
@@ -178,7 +178,7 @@ export default function Navbar(props: NavbarProps) {
 								y: 0,
 								transition: {
 									duration: 0.45,
-									ease: "easeInOut",
+									type: "spring",
 									delay: 0.1,
 								},
 							}}
@@ -213,7 +213,7 @@ export default function Navbar(props: NavbarProps) {
 									y: 0,
 									transition: {
 										duration: 0.45,
-										ease: "easeInOut",
+										type: "spring",
 										delay: (index + 2) * 0.1,
 									},
 								}}
@@ -242,7 +242,7 @@ export default function Navbar(props: NavbarProps) {
 								y: 0,
 								transition: {
 									duration: 0.45,
-									ease: "easeInOut",
+									type: "spring",
 									delay: (props.navlinks.length + 2) * 0.1,
 								},
 							}}
