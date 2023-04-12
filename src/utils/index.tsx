@@ -1,6 +1,7 @@
 import particleConfigDark from "./particle_options_dark.json";
 import particleConfigLight from "./particle_options_light.json";
 import amogusParticleConfig from "./amongus_particle_options.json";
+import { UntitledChat, WhyBot, FSApi } from "../assets";
 
 const styles = {
 	homeTextCode: "dark:text-white dark:opacity-10 opacity-20 font-jetbrains",
@@ -125,6 +126,55 @@ const isDarkMode = () => {
 	}
 	return false;
 };
+interface ProjectProp {
+	side: "left" | "right";
+	name: string;
+	description: string;
+	image: string;
+	tags: string[];
+	github: string;
+	link: string;
+}
+const projects: ProjectProp[] = [
+	{
+		side: "left",
+		image: UntitledChat,
+		name: "Untitled Chat",
+		description:
+			"Untitled Chat is an end to end voice and text chat app. Untitled Chat provided users with an encrupted connection to the person they want to talk to. Unttiled chat is open source, free and does not sell your data. [Currently Rewriting]!",
+		tags: [
+			"Encryption",
+			"Redis",
+			"Rabbitmq",
+			"Fastapi",
+			"React",
+			"postgresql",
+			"electron",
+		],
+		github: "https://github.com/Untitled-Chat-App",
+		link: "https://chat.fusionsid.xyz/",
+	},
+	{
+		side: "right",
+		image: WhyBot,
+		name: "Why Bot",
+		description:
+			"Why bot is an open source, multi-purpose discord bot made to enhance your discord experience. Why bot has hundred of commands and can do anything you need it to do. Why bot was made with python using the pycord library.",
+		tags: ["Discord", "OSS", "Pycord", "Postgresql", "redis", "Asyncio"],
+		github: "https://github.com/FusionSid/Why-Bot/tree/rewrite-the-rewrite",
+		link: "https://why.fusionsid.xyz/",
+	},
+	{
+		side: "left",
+		image: FSApi,
+		name: "FusionSidAPI",
+		description:
+			"FusionSidAPI is a multi-purpose REST API that can do several things such as temporary file hosting, meme/image generation, text conversion, code execution, status cards and much more",
+		tags: ["Fastapi", "Pillow", "docker", "pycord", "rest"],
+		github: "https://github.com/FusionSid/FusionSidAPI",
+		link: "https://api.fusionsid.xyz/",
+	},
+];
 
 export {
 	styles,
@@ -134,4 +184,5 @@ export {
 	particleConfigDark,
 	particleConfigLight,
 	amogusParticleConfig,
+	projects,
 };

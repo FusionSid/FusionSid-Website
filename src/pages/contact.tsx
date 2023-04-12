@@ -1,3 +1,3 @@
 export default function Contact() {
-    return <></>;
+	return <>PAGE TODO</>;
 }
