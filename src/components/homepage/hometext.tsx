@@ -55,6 +55,7 @@ export default function HomeText() {
 			}
 		} else {
 			alert("Wrong!\nThe correct answer was ';'!");
+			window.location.replace("https://youtu.be/dQw4w9WgXcQ");
 		}
 	}
 
@@ -87,67 +88,74 @@ export default function HomeText() {
 						<h3 className={linkCodeStyle + " z-30 inline-block"}>
 							{'")'}
 						</h3>
-						<h3
-							id="semicolon"
-							onMouseOver={
-								!semicolonFixed ? semicolonOnHover : () => {}
-							}
-							onMouseLeave={
-								!semicolonFixed ? semicolonOnLeave : () => {}
-							}
-							onClick={!semicolonFixed ? onBugClick : () => {}}
-							style={{ opacity: 0 }}
-							className={
-								linkCodeStyle +
-								" relative z-30 inline-block cursor-pointer text-[#393B45]"
-							}
-						>
-							{";"}
-						</h3>
-						{showErrorDiv && !semicolonFixed && (
-							<motion.span
-								animate={{
-									opacity: 1,
-									transition: {
-										duration: 0.45,
-										ease: "easeInOut",
-										delay: 1,
-									},
-								}}
-								initial={{
-									opacity: 0,
-								}}
+
+						{semicolonFixed ? (
+							<h3
+								className={linkCodeStyle + " z-30 inline-block"}
 							>
+								{";"}
+							</h3>
+						) : (
+							<>
 								<h3
+									id="semicolon"
+									onMouseOver={semicolonOnHover}
+									onMouseLeave={semicolonOnLeave}
+									onClick={onBugClick}
+									style={{ opacity: 0 }}
 									className={
-										"relative right-3 top-10 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
-									}
-								>
-									{"^"}
-								</h3>
-								<h3
-									className={
-										"relative right-6 top-16 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+										linkCodeStyle +
+										" relative z-30 inline-block cursor-pointer"
 									}
 								>
 									{";"}
 								</h3>
-								<br />
-								<h3
-									className={
-										"z-30 inline-block font-jetbrains text-[0.8rem] text-[#ED6C72] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
-									}
-								>
-									error:
-								</h3>
-								<h3
-									className={
-										"z-30 inline-block font-jetbrains text-[0.8rem] text-[#ACB2BE] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
-									}
-								>
-									&nbsp; expected ';' after expression
-								</h3>
-							</motion.span>
+								{showErrorDiv && !semicolonFixed && (
+									<motion.span
+										animate={{
+											opacity: 1,
+											transition: {
+												duration: 0.45,
+												ease: "easeInOut",
+												delay: 1,
+											},
+										}}
+										initial={{
+											opacity: 0,
+										}}
+									>
+										<h3
+											className={
+												"relative right-3 top-10 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+											}
+										>
+											{"^"}
+										</h3>
+										<h3
+											className={
+												"relative right-6 top-16 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+											}
+										>
+											{";"}
+										</h3>
+										<br />
+										<h3
+											className={
+												"z-30 inline-block font-jetbrains text-[0.8rem] text-[#ED6C72] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+											}
+										>
+											error:
+										</h3>
+										<h3
+											className={
+												"z-30 inline-block font-jetbrains text-[0.8rem] text-[#ACB2BE] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
+											}
+										>
+											&nbsp; expected ';' after expression
+										</h3>
+									</motion.span>
+								)}
+							</>
 						)}
 					</div>
 
