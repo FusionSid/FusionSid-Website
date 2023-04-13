@@ -83,7 +83,7 @@ export default function Project(props: ProjectProp) {
 											}}
 											className="absolute left-0 top-0 h-full w-full rounded-xl opacity-10"
 										></div>
-										<p className="font-jetbrains text-white">
+										<p className="font-jetbrains text-white z-10">
 											{props.description}
 										</p>
 									</div>
@@ -220,7 +220,7 @@ export default function Project(props: ProjectProp) {
 											}}
 											className="absolute left-0 top-0 h-full w-full rounded-xl opacity-10"
 										></div>
-										<p className="font-jetbrains text-white">
+										<p className="font-jetbrains text-white z-10">
 											{props.description}
 										</p>
 									</div>

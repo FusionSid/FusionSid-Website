@@ -129,7 +129,7 @@ const isDarkMode = () => {
 interface ProjectProp {
 	side: "left" | "right";
 	name: string;
-	description: string;
+	description: string | JSX.Element;
 	image: string;
 	tags: string[];
 	github: string;
@@ -140,8 +140,18 @@ const projects: ProjectProp[] = [
 		side: "left",
 		image: UntitledChat,
 		name: "Untitled Chat",
-		description:
-			"Untitled Chat is an end to end voice and text chat app. Untitled Chat provides users with an encrypted chat connection to the person they want to talk to. Unttiled chat is open source, free and does not sell your data. (Currently Untitled Chat is in the process of being completely rewritten so it is not functional right now)",
+		description: (
+			<span>
+				Untitled Chat is an end to end voice and text chat app. Untitled
+				Chat provides users with an encrypted chat connection to the
+				person they want to talk to. Unttiled chat is open source, free
+				and does not sell your data.{" "}
+				<span className="text-red-500">
+					(Untitled Chat is being rewritten so it is not functional
+					right now)
+				</span>
+			</span>
+		),
 		tags: [
 			"Encryption",
 			"Redis",
@@ -157,8 +167,21 @@ const projects: ProjectProp[] = [
 		side: "right",
 		image: WhyBot,
 		name: "Why Bot",
-		description:
-			"Why bot is an open source, multi-purpose discord bot made to enhance your discord experience. Why bot has over one hundred commands and many features. Why bot was made with python using the pycord library. This is also the project that made me really intrested in programming.",
+		description: (
+			<span>
+				Why bot is an open source, multi-purpose discord bot made to
+				enhance your discord experience. Why bot has over one hundred
+				commands and many features. Why bot was made with python using
+				the pycord library. This is also the project that made me really
+				intrested in programming.{" "}
+				<a
+					href="https://discord.com/oauth2/authorize?client_id=896932646846885898&permissions=8&scope=bot%20applications.commands"
+					className="text-blue-500 underline"
+				>
+					Invite The Bot
+				</a>
+			</span>
+		),
 		tags: ["Discord", "OSS", "Pycord", "Postgresql", "redis", "Asyncio"],
 		github: "https://github.com/FusionSid/Why-Bot/tree/rewrite-the-rewrite",
 		link: "https://why.fusionsid.xyz/",
@@ -167,8 +190,21 @@ const projects: ProjectProp[] = [
 		side: "left",
 		image: FSApi,
 		name: "FusionSidAPI",
-		description:
-			"FusionSidAPI is a multi-purpose REST API that can do several things such as temporary file hosting, meme/image generation, text conversion, code execution, discord status cards and much much more",
+		description: (
+			<span>
+				FusionSidAPI is a multi-purpose REST API that can do several
+				things such as temporary file hosting, meme/image generation,
+				text conversion, code execution, discord status cards and much
+				much more. FusionSidAPI also has a{" "}
+				<a
+					href="https://pypi.org/project/fusionsidsapi/"
+					className="text-blue-500 underline"
+				>
+					Python Wrapper (FusionSidAPI.py)
+				</a>{" "}
+				for you to use it easily in your python project.
+			</span>
+		),
 		tags: ["Fastapi", "Pillow", "docker", "pycord", "API", "python"],
 		github: "https://github.com/FusionSid/FusionSidAPI",
 		link: "https://api.fusionsid.xyz/",
