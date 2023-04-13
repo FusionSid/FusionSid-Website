@@ -1,5 +1,5 @@
 // hooks
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // import router
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
@@ -8,7 +8,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import * as pages from "./pages";
 
 // import footer and navbar
-import { Navbar, Footer, ThemeButton } from "./components";
+import { Navbar, Footer, ThemeButton, Loader } from "./components";
 
 // dark mode
 import { NavbarLinks } from "./utils";
@@ -19,12 +19,12 @@ import { AnimatePresence } from "framer-motion";
 import "./App.css";
 
 // import the library
-import { library } from '@fortawesome/fontawesome-svg-core'
+import { library } from "@fortawesome/fontawesome-svg-core";
 
 // import your icons
-import { fab } from '@fortawesome/free-brands-svg-icons'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { fas } from "@fortawesome/free-solid-svg-icons";
+import { far } from "@fortawesome/free-regular-svg-icons";
 
 export const AnimatedRoutes = () => {
 	const location = useLocation();
@@ -66,17 +66,32 @@ function App() {
 		);
 	}, []);
 
+	const [loading, setLoading] = useState(false);
+	useEffect(() => {
+		setLoading(true);
+		const timeout = setTimeout(() => {
+			setLoading(false);
+		}, 2100);
+		return () => {
+			clearTimeout(timeout);
+		};
+	}, []);
+
 	return (
 		<div>
-			<BrowserRouter>
-				<Navbar navlinks={NavbarLinks} />
-				<AnimatedRoutes />
-				<ThemeButton />
-				<Footer />
-			</BrowserRouter>
+			{loading ? (
+				<><Loader /></>
+			) : (
+				<BrowserRouter>
+					<Navbar navlinks={NavbarLinks} />
+					<AnimatedRoutes />
+					<ThemeButton />
+					<Footer />
+				</BrowserRouter>
+			)}
 		</div>
 	);
 }
 
 export default App;
-library.add(fab, fas, far)
+library.add(fab, fas, far);

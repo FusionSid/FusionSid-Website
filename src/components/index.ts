@@ -4,6 +4,7 @@ import Footer from "./footer"
 import * as Homepage from "./homepage"
 import ThemeButton from "./theme"
 import { ParticlesBG } from "./particles"
+import Loader from "./loader"
 
 // export components
 export {
@@ -11,5 +12,6 @@ export {
     Footer,
     ThemeButton,
     ParticlesBG,
-    Homepage
+    Homepage,
+    Loader
 }
