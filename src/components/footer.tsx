@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Footer() {
-	let navigate = useNavigate();
+	const [counter, setCounter] = useState(0);
+	function updateCounter() {
+		setCounter(counter + 1);
+		if (counter == 69) {
+			window.location.replace("https://youtu.be/dQw4w9WgXcQ");
+		}
+	}
+
 	const linkStyle =
 		"hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-black dark:before:bg-white before:absolute before:left-0 before:bottom-0 inline-fold font-jetbrains text-[1.69rem] font-semibold dark:text-white sm:text-[1.3rem] md:text-[1.5rem] lg:text-[1.7rem]";
 
@@ -54,10 +61,10 @@ export default function Footer() {
 			<div className="flex flex-col items-center justify-center p-10">
 				<div className="flex h-24 items-center justify-between pb-4 sm:pb-10">
 					<svg
+						onClick={updateCounter}
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 1090.000000 2001.000000"
-						className="flex h-16 w-24 gap-3 hover:animate-spin-slow hover:cursor-pointer dark:fill-white sm:h-14 sm:w-14"
-						onClick={() => navigate("/")}
+						className="flex h-16 w-24 gap-3 hover:cursor-pointer dark:fill-white sm:h-14 sm:w-14"
 					>
 						<g
 							transform="translate(0.000000,2001.000000) scale(0.100000,-0.100000)"
