@@ -133,7 +133,7 @@ interface ProjectProp {
 	image: string;
 	tags: string[];
 	github: string;
-	link: string;
+	link?: string;
 }
 const projects: ProjectProp[] = [
 	{
@@ -141,7 +141,7 @@ const projects: ProjectProp[] = [
 		image: UntitledChat,
 		name: "Untitled Chat",
 		description:
-			"Untitled Chat is an end to end voice and text chat app. Untitled Chat provided users with an encrupted connection to the person they want to talk to. Unttiled chat is open source, free and does not sell your data. [Currently Rewriting]!",
+			"Untitled Chat is an end to end voice and text chat app. Untitled Chat provides users with an encrypted chat connection to the person they want to talk to. Unttiled chat is open source, free and does not sell your data. (Currently Untitled Chat is in the process of being completely rewritten so it is not functional right now)",
 		tags: [
 			"Encryption",
 			"Redis",
@@ -152,14 +152,13 @@ const projects: ProjectProp[] = [
 			"electron",
 		],
 		github: "https://github.com/Untitled-Chat-App",
-		link: "https://chat.fusionsid.xyz/",
 	},
 	{
 		side: "right",
 		image: WhyBot,
 		name: "Why Bot",
 		description:
-			"Why bot is an open source, multi-purpose discord bot made to enhance your discord experience. Why bot has hundred of commands and can do anything you need it to do. Why bot was made with python using the pycord library.",
+			"Why bot is an open source, multi-purpose discord bot made to enhance your discord experience. Why bot has over one hundred commands and many features. Why bot was made with python using the pycord library. This is also the project that made me really intrested in programming.",
 		tags: ["Discord", "OSS", "Pycord", "Postgresql", "redis", "Asyncio"],
 		github: "https://github.com/FusionSid/Why-Bot/tree/rewrite-the-rewrite",
 		link: "https://why.fusionsid.xyz/",
@@ -169,8 +168,8 @@ const projects: ProjectProp[] = [
 		image: FSApi,
 		name: "FusionSidAPI",
 		description:
-			"FusionSidAPI is a multi-purpose REST API that can do several things such as temporary file hosting, meme/image generation, text conversion, code execution, status cards and much more",
-		tags: ["Fastapi", "Pillow", "docker", "pycord", "rest"],
+			"FusionSidAPI is a multi-purpose REST API that can do several things such as temporary file hosting, meme/image generation, text conversion, code execution, discord status cards and much much more",
+		tags: ["Fastapi", "Pillow", "docker", "pycord", "API", "python"],
 		github: "https://github.com/FusionSid/FusionSidAPI",
 		link: "https://api.fusionsid.xyz/",
 	},
