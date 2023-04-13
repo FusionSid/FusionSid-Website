@@ -307,7 +307,7 @@ export default function Navbar(props: NavbarProps) {
 						)}
 
 						<div
-							className={`fixed right-0 top-0 z-40 h-full w-full bg-[#9a9787] p-5 text-white duration-300 ease-in-out dark:bg-pgrey ${
+							className={`fixed right-0 top-0 z-40 h-full w-full bg-[#9a9787] p-5 text-white duration-500 ease-in-out dark:bg-pgrey ${
 								navbarOpen
 									? "translate-x-0 "
 									: "translate-x-full"
