@@ -30,6 +30,34 @@ export default function HomeText() {
 
 	let timeout: NodeJS.Timeout;
 
+	const semicolonOnHover = () => {
+		timeout = setTimeout(() => {
+			setShowErrorDiv(true);
+		}, 500);
+	};
+	const semicolonOnLeave = () => {
+		setShowErrorDiv(false);
+		clearTimeout(timeout);
+	};
+
+	const [semicolonFixed, setSemicolonFixed] = useState(false);
+	function onBugClick() {
+		let input = prompt(
+			"You have found a syntax error!\nPlease fix this for me by entering what should be there:"
+		);
+		if (input === ";") {
+			const element = document.getElementById("semicolon");
+			if (element) {
+				alert("Thank you so much for fixing my website!");
+				element.style.opacity = "0.2";
+				setShowErrorDiv(false);
+				setSemicolonFixed(true);
+			}
+		} else {
+			alert("Wrong!\nThe correct answer was ';'!");
+		}
+	}
+
 	return (
 		<div className="m-10">
 			{!mobileVersion ? (
@@ -60,35 +88,36 @@ export default function HomeText() {
 							{'")'}
 						</h3>
 						<h3
-							onMouseOver={() => {
-								timeout = setTimeout(() => {
-									setShowErrorDiv(true);
-								}, 500);
-							}}
-							onMouseLeave={() => {
-								setShowErrorDiv(false);
-								clearTimeout(timeout);
-							}}
+							id="semicolon"
+							onMouseOver={
+								!semicolonFixed ? semicolonOnHover : () => {}
+							}
+							onMouseLeave={
+								!semicolonFixed ? semicolonOnLeave : () => {}
+							}
+							onClick={!semicolonFixed ? onBugClick : () => {}}
 							style={{ opacity: 0 }}
 							className={
 								linkCodeStyle +
-								" relative z-30 inline-block cursor-pointer opacity-[0]"
+								" relative z-30 inline-block cursor-pointer text-[#393B45]"
 							}
 						>
 							{";"}
 						</h3>
-						{showErrorDiv && (
-							<motion.span animate={{
-								opacity: 1,
-								transition: {
-									duration: 0.45,
-									ease: "easeInOut",
-									delay: 1,
-								},
-							}}
-							initial={{
-								opacity: 0,
-							}}>
+						{showErrorDiv && !semicolonFixed && (
+							<motion.span
+								animate={{
+									opacity: 1,
+									transition: {
+										duration: 0.45,
+										ease: "easeInOut",
+										delay: 1,
+									},
+								}}
+								initial={{
+									opacity: 0,
+								}}
+							>
 								<h3
 									className={
 										"relative right-3 top-10 z-30 inline-block font-jetbrains text-[0.8rem] text-[#B1DE82] lg:text-[1rem] xl:text-[1.2rem] 2xl:text-[1.4rem]"
