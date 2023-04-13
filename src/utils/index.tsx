@@ -144,7 +144,7 @@ const projects: ProjectProp[] = [
 			<span>
 				Untitled Chat is an end to end voice and text chat app. Untitled
 				Chat provides users with an encrypted chat connection to the
-				person they want to talk to. Unttiled chat is open source, free
+				person they want to talk to. Untitled chat is open source, free
 				and does not sell your data.{" "}
 				<span className="text-red-500">
 					(Untitled Chat is being rewritten so it is not functional
@@ -173,7 +173,8 @@ const projects: ProjectProp[] = [
 				enhance your discord experience. Why bot has over one hundred
 				commands and many features. Why bot was made with python using
 				the pycord library. This is also the project that made me really
-				intrested in programming.{" "}
+				intrested in programming and when i'm bored of programming i
+				come back and start a rewrite of it.{" "}
 				<a
 					href="https://discord.com/oauth2/authorize?client_id=896932646846885898&permissions=8&scope=bot%20applications.commands"
 					className="text-blue-500 underline"
