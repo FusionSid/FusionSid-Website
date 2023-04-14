@@ -36,6 +36,26 @@ export default function Project(props: ProjectProp) {
 		}
 	}, [controls, inView]);
 
+	const [darkMode, setDarkMode] = useState(true);
+
+	useEffect(() => {
+		const darkModeUpdateHandler = () => {
+			setDarkMode(localStorage.theme !== "light");
+		};
+		window.addEventListener("storage", darkModeUpdateHandler);
+
+		darkModeUpdateHandler();
+
+		return () => {
+			window.removeEventListener("storage", darkModeUpdateHandler);
+		};
+	}, []);
+
+	const lightModeGradient =
+		"url(.png), radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(50, 30, 10, 0.3) 0%, rgba(10, 30, 50, 0.3) 77.08%, rgba(70, 144, 213, 0) 100%)";
+	const darkModeGradient =
+		"url(.png), radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(105, 59, 147, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%, rgba(70, 144, 213, 0) 100%)";
+
 	return (
 		<>
 			{!mobileVersion ? (
@@ -69,8 +89,9 @@ export default function Project(props: ProjectProp) {
 									<div
 										className="z-10 flex max-h-[15rem] max-w-[55rem] items-center rounded-xl px-5 py-10 shadow-xl"
 										style={{
-											background:
-												"url(.png), radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(105, 59, 147, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%, rgba(70, 144, 213, 0) 100%)",
+											background: darkMode
+												? darkModeGradient
+												: lightModeGradient,
 											backgroundBlendMode:
 												"overlay, normal",
 											backdropFilter: "blur(40px)",
@@ -97,11 +118,10 @@ export default function Project(props: ProjectProp) {
 												role="img"
 												viewBox="0 0 24 24"
 												fill="none"
-												stroke="white"
 												stroke-width="2"
 												stroke-linecap="round"
 												stroke-linejoin="round"
-												className="w-7"
+												className="w-7 stroke-black dark:stroke-white"
 											>
 												<title>GitHub</title>
 												<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -120,7 +140,7 @@ export default function Project(props: ProjectProp) {
 													stroke="white"
 													stroke-width="2"
 													stroke-linecap="round"
-													className="w-7"
+													className="w-7 stroke-black dark:stroke-white"
 													stroke-linejoin="round"
 												>
 													<title>External Link</title>
@@ -208,8 +228,9 @@ export default function Project(props: ProjectProp) {
 									<div
 										className="z-10 flex max-h-[15rem] max-w-[55rem] items-center rounded-xl px-5 py-10 shadow-xl"
 										style={{
-											background:
-												"url(.png), radial-gradient(90.16% 143.01% at 15.32% 21.04%, rgba(105, 59, 147, 0.2) 0%, rgba(110, 191, 244, 0.0447917) 77.08%, rgba(70, 144, 213, 0) 100%)",
+											background: darkMode
+												? darkModeGradient
+												: lightModeGradient,
 											backgroundBlendMode:
 												"overlay, normal",
 											backdropFilter: "blur(40px)",
@@ -240,7 +261,7 @@ export default function Project(props: ProjectProp) {
 												stroke-width="2"
 												stroke-linecap="round"
 												stroke-linejoin="round"
-												className="w-7"
+												className="w-7 stroke-black dark:stroke-white"
 											>
 												<title>GitHub</title>
 												<path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -259,7 +280,7 @@ export default function Project(props: ProjectProp) {
 													stroke="white"
 													stroke-width="2"
 													stroke-linecap="round"
-													className="w-7"
+													className="w-7 stroke-black dark:stroke-white"
 													stroke-linejoin="round"
 												>
 													<title>External Link</title>
@@ -301,9 +322,9 @@ export default function Project(props: ProjectProp) {
 											ease: "easeInOut",
 										},
 									},
-									hidden: { opacity: 0},
+									hidden: { opacity: 0 },
 								}}
-								className="relative h-full w-full bg-blue-950 bg-opacity-75 rounded-xl"
+								className="relative h-full w-full rounded-xl bg-blue-950 bg-opacity-75"
 							>
 								<div
 									className="h-full w-full rounded-xl px-5 py-10 shadow-xl"
@@ -332,7 +353,7 @@ export default function Project(props: ProjectProp) {
 										<p className="z-10 font-jetbrains text-white">
 											{props.description}
 										</p>
-										<p className="font-jetbrains uppercase drop-shadow-xl text-[#AAB2CE]">
+										<p className="font-jetbrains uppercase text-[#AAB2CE] drop-shadow-xl">
 											{props.tags.join(" ")}
 										</p>
 										<div className="flex gap-2">
